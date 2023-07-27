@@ -1,0 +1,31 @@
+﻿/* styles.css */
+
+
+
+/* Center the logo container and main content side by side */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust the height as needed */
+}
+
+/* Styles for the logo */
+.logo {
+    /* Add any styles for the logo here */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Styles for the main content */
+.main-content {
+    margin-left: 16px; /* Add some space between the logo and main content */
+    color: white; /* Set text color to white */
+    max-width: 50%; /* Adjust the width as needed */
+}
+
+/* Style for the main text */
+.main-text {
+    font-size: 16px; /* Add your desired font size */
+    font-weight: 100;
+}

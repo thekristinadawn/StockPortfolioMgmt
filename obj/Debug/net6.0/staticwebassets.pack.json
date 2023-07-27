@@ -5,16 +5,28 @@
       "PackagePath": "staticwebassets\\StockPortfolioMgmt.bundle.scp.css"
     },
     {
-      "Id": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\Styles.css",
-      "PackagePath": "staticwebassets\\Styles.css"
-    },
-    {
       "Id": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
       "Id": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\images\\BackgroundImage.jpg",
+      "PackagePath": "staticwebassets\\images\\BackgroundImage.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\images\\Fake Graph.jpg",
+      "PackagePath": "staticwebassets\\images\\Fake Graph.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\images\\StockMVMT Logo.jpg",
+      "PackagePath": "staticwebassets\\images\\StockMVMT Logo.jpg"
     },
     {
       "Id": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\js\\site.js",

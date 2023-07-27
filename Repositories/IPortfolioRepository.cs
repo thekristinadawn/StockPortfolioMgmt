@@ -7,7 +7,7 @@ namespace StockPortfolioMgmt.Repositories
     public interface IPortfolioRepository
     {
         Task<IEnumerable<PortfolioModel>> GetAllPortfolios();
-        Task<PortfolioModel> GetPortfolioById(int id);
+        Task<PortfolioModel> GetPortfolioInfoById(int id);
         Task CreatePortfolio(PortfolioModel portfolio);
         Task UpdatePortfolio(PortfolioModel portfolio);
         Task DeletePortfolio(int portfolioId);

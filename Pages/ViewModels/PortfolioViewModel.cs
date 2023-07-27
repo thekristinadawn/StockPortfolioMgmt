@@ -1,14 +1,25 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using StockPortfolioMgmt.Context;
 using StockPortfolioMgmt.Models;
 using StockPortfolioMgmt.Repositories;
 
-namespace StockPortfolioMgmt.Pages
+namespace StockPortfolioMgmt.ViewModels
 {
-    public class PortfolioViewModel:PageModel
+    public class PortfolioViewModel : PageModel
     {
+
+        private readonly IPortfolioRepository _portfolioRepository;
+        private readonly IBrokerRepository _brokerRepository;
+
+        public PortfolioViewModel(IPortfolioRepository portfolioRepository, IBrokerRepository brokerRepository)
+        {
+            _portfolioRepository = portfolioRepository;
+            _brokerRepository = brokerRepository;
+        }
+
         public PortfolioModel Portfolio
         {
             get; set;
@@ -31,6 +42,8 @@ namespace StockPortfolioMgmt.Pages
             var stockPrice = StockPrices.FirstOrDefault(s => s.StockId == stockId);
             return stockPrice?.OpenPrice ?? 0;
         }
+
+
 
         public decimal CalculateGainLossPercentage(int portfolioId, int stockId)
         {
@@ -56,5 +69,14 @@ namespace StockPortfolioMgmt.Pages
 
             return 0;
         }
+
+        public async Task LoadDataAsync(int portfolioId)
+        {
+            Portfolio = await _portfolioRepository.GetPortfolioInfoById(portfolioId);
+            PortfolioStocks = (await _portfolioRepository.GetStocksByPortfolioId(portfolioId)).ToList();
+            Transactions = (await _portfolioRepository.GetAllTransactions(portfolioId)).ToList();
+            StockPrices = (List<StockPricesModel>)await _brokerRepository.GetAllStockPrices();
+        }
+
     }
 }

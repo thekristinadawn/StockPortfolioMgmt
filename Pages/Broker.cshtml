@@ -1,8 +1,8 @@
-﻿@page
-
-@model StockPortfolioMgmt.Pages.BrokerModel
+﻿@page "/Broker"
+@model BrokerModel
 @{
     ViewData["Title"] = "Broker Dashboard";
+    Layout = "_Layout";
 }
 
 <h1> Broker Dashboard</h1>
@@ -22,7 +22,7 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var portfolio in Model.PortfolioInfo)
+        @foreach (var portfolio in Model.ViewModel.PortfolioWithBalances)
         {
             <tr>
                 <td>@portfolio.PortfolioName</td>
@@ -34,7 +34,3 @@
         }
     </tbody>
 </table>
-
-
-
-

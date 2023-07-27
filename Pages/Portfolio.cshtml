@@ -1,18 +1,23 @@
 ﻿@page "{portfolioId:int}"
 
-@model StockPortfolioMgmt.Pages.PortfolioViewModel
+@model PortfolioViewModel
 @{
     ViewData["Title"] = "Portfolio Dashboard";
+    Layout = "_Layout";
 }
 
 @using StockPortfolioMgmt.Models;
 @using System.Collections.Generic;
 @using System.Linq;
+@using StockPortfolioMgmt.ViewModels;
 
 <h1> Portfolio Dashboard</h1>
 
-<p><strong>Portfolio Name:</strong> @Model.Portfolio.PortfolioName</p>
+@if (Model.Portfolio != null)
+{
+    <p><strong>Portfolio Name:</strong> @Model.Portfolio.PortfolioName</p>
 <p><strong>Current Cash Balance:</strong> @Model.Portfolio.Balance.ToString("C2")</p>
+}
 
 
 <h2>Transactions</h2>

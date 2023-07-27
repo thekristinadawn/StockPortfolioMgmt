@@ -31,23 +31,22 @@ namespace StockPortfolioMgmt.Repositories
             }
         }
 
-        public async Task<PortfolioModel> GetPortfolioById(int portfolioId)
+
+        //NEED TO UPDATE THIS TO GET JUST PORTFOLIO INFO
+        public async Task<PortfolioModel> GetPortfolioInfoById(int portfolioId)
         {
             using (var connection = _dapperContext.CreateConnection())
             {
-                string query = "SELECT * FROM Portfolios WHERE PortfolioId = @PortfolioId";
-                var portfolio = await connection.QuerySingleOrDefaultAsync<PortfolioModel>(query, new
+                string query = "SELECT * FROM PortfolioInfo WHERE PortfolioId = @PortfolioId";
+                var portfolioInfo = await connection.QuerySingleOrDefaultAsync<PortfolioModel>(query, new
                 {
                     PortfolioId = portfolioId
                 });
 
-                if (portfolio != null)
-                {
-                    portfolio.Stocks = await GetPortfolioStocks(connection, portfolio.PortfolioId);
-                }
-                return portfolio;
+                return portfolioInfo;
             }
         }
+
 
         public async Task CreatePortfolio(PortfolioModel portfolio)
         {

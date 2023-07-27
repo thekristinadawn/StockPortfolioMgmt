@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YgQF3Z4A9M72mRMAXzGDeo/VKWz9IRL4+up0l8hlmgU=",
+  "Hash": "mO44FegzZY3n/aotyCmeT/21Ecq/lfg7Q+863wr384Q=",
   "Source": "StockPortfolioMgmt",
   "BasePath": "_content/StockPortfolioMgmt",
   "Mode": "Default",
@@ -68,6 +68,23 @@
       "OriginalItemSpec": "wwwroot\\css\\site.css"
     },
     {
+      "Identity": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\css\\styles.css",
+      "SourceId": "StockPortfolioMgmt",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\",
+      "BasePath": "_content/StockPortfolioMgmt",
+      "RelativePath": "css/styles.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\styles.css"
+    },
+    {
       "Identity": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\favicon.ico",
       "SourceId": "StockPortfolioMgmt",
       "SourceType": "Discovered",
@@ -83,6 +100,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\images\\BackgroundImage.jpg",
+      "SourceId": "StockPortfolioMgmt",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\",
+      "BasePath": "_content/StockPortfolioMgmt",
+      "RelativePath": "images/BackgroundImage.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\BackgroundImage.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\images\\Fake Graph.jpg",
+      "SourceId": "StockPortfolioMgmt",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\",
+      "BasePath": "_content/StockPortfolioMgmt",
+      "RelativePath": "images/Fake Graph.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Fake Graph.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\images\\StockMVMT Logo.jpg",
+      "SourceId": "StockPortfolioMgmt",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\",
+      "BasePath": "_content/StockPortfolioMgmt",
+      "RelativePath": "images/StockMVMT Logo.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\StockMVMT Logo.jpg"
     },
     {
       "Identity": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\js\\site.js",
@@ -1069,23 +1137,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
-    },
-    {
-      "Identity": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\Styles.css",
-      "SourceId": "StockPortfolioMgmt",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Kristina.Palmer\\StockPortfolioMgmt\\wwwroot\\",
-      "BasePath": "_content/StockPortfolioMgmt",
-      "RelativePath": "Styles.css",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\Styles.css"
     }
   ]
 }

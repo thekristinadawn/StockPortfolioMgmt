@@ -16,10 +16,6 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Kristina.Palmer\StockPortfolioMgmt
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Kristina.Palmer/StockPortfolioMgmt/Pages/TradeRichly.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVHJhZGVSaWNobHkucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Kristina.Palmer/StockPortfolioMgmt/Pages/Broker.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQnJva2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
