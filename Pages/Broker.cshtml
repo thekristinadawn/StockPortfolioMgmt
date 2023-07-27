@@ -1,0 +1,40 @@
+﻿@page
+
+@model StockPortfolioMgmt.Pages.BrokerModel
+@{
+    ViewData["Title"] = "Broker Dashboard";
+}
+
+<h1> Broker Dashboard</h1>
+
+<!-- Add import form -->
+<form method="post" enctype="multipart/form-data">
+    <input type="file" name="csvFilePath" accept=".csv" />
+    <button type="submit">Import Stock Prices</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Portfolio Name</th>
+            <th>Balance</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var portfolio in Model.PortfolioInfo)
+        {
+            <tr>
+                <td>@portfolio.PortfolioName</td>
+                <td>@portfolio.Balance.ToString("C2")</td>
+                <td>
+                    <a asp-page="PortfolioPageModel" asp-route-portfolioId="@portfolio.PortfolioId">View Portfolio</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+

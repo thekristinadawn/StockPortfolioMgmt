@@ -1,0 +1,130 @@
+﻿@page "{portfolioId:int}"
+
+@model StockPortfolioMgmt.Pages.PortfolioViewModel
+@{
+    ViewData["Title"] = "Portfolio Dashboard";
+}
+
+@using StockPortfolioMgmt.Models;
+@using System.Collections.Generic;
+@using System.Linq;
+
+<h1> Portfolio Dashboard</h1>
+
+<p><strong>Portfolio Name:</strong> @Model.Portfolio.PortfolioName</p>
+<p><strong>Current Cash Balance:</strong> @Model.Portfolio.Balance.ToString("C2")</p>
+
+
+<h2>Transactions</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Transaction Type</th>
+            <th>Quantity</th>
+            <th>Transaction Amount</th>
+            <th>Fees</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in Model.Transactions)
+        {
+            <tr>
+                <td>@transaction.TransactionDate.ToShortDateString()</td>
+                <td>@transaction.TransactionType</td>
+                <td>@transaction.Quantity</td>
+                <td>@transaction.TransactionAmount.ToString("C2")</td>
+                <td>@transaction.Fee.ToString("C2")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Stocks</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Stock Symbol</th>
+            <th>Quantity</th>
+            <th>Purchase Price</th>
+            <th>Purchase Date</th>
+            <th>Current Price</th>
+            <th>Percentage Gain/Loss</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stock in Model.PortfolioStocks)
+        {
+            <tr>
+                <td>@stock.Symbol</td>
+                <td>@stock.Quantity</td>
+                <td>@stock.PurchasePrice.ToString("C2")</td>
+                <td>@stock.PurchaseDate.ToShortDateString()</td>
+                <td>@Model.GetCurrentStockPrice(stock.StockId).ToString("C2")</td>
+                <td>@Model.CalculateGainLossPercentage(Model.Portfolio.PortfolioId, stock.StockId).ToString("N2")%</td>
+                <td>
+                    <form method="post" asp-page-handler="SellStock">
+                        <input type="hidden" name="portfolioId" value="@Model.Portfolio.PortfolioId" />
+                        <input type="hidden" name="stockId" value="@stock.StockId" />
+                        <input type="number" name="quantity" min="1" max="@stock.Quantity" step="1" />
+                        <button type="submit">Sell</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h2>Deposit, Withdraw, and Transfer Cash</h2>
+<form method="post" asp-page-handler="DepositCash">
+    <input type="hidden" name="portfolioId" value="@Model.Portfolio.PortfolioId" />
+    <label for="amount">Amount:</label>
+    <input type="number" name="amount" step="0.01" required />
+    <button type="submit">Deposit</button>
+</form>
+
+<form method="post" asp-page-handler="WithdrawCash">
+    <input type="hidden" name="portfolioId" value="@Model.Portfolio.PortfolioId" />
+    <label for="amount">Amount:</label>
+    <input type="number" name="amount" step="0.01" required />
+    <button type="submit">Withdraw</button>
+</form>
+
+<form method="post" asp-page-handler="TransferCash">
+    <input type="hidden" name="fromPortfolioId" value="@Model.Portfolio.PortfolioId" />
+    <label for="toPortfolioId">To Portfolio ID:</label>
+    <input type="number" name="toPortfolioId" required />
+    <label for="amount">Amount:</label>
+    <input type="number" name="amount" step="0.01" required />
+    <button type="submit">Transfer</button>
+</form>
+
+<h2>Available Stocks</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Stock Symbol</th>
+            <th>Current Price</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var stock in Model.StockPrices)
+        {
+            <tr>
+                <td>@stock.Symbol</td>
+                <td>@stock.OpenPrice.ToString("C2")</td>
+                <td>
+                    <form method="post" asp-page-handler="PurchaseStock">
+                        <input type="hidden" name="portfolioId" value="@Model.Portfolio.PortfolioId" />
+                        <input type="hidden" name="stockId" value="@stock.StockId" />
+                        <input type="number" name="quantity" min="1" step="1" />
+                        <button type="submit">Buy</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
